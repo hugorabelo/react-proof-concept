@@ -8,7 +8,7 @@ import FormControl from '@mui/material/FormControl'
 import Button from '@mui/material/Button'
 import { addEmployeeForm } from '../redux/actions/index'
 import { useDispatch } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 import uuid from 'react-uuid'
 
 function AddEmployee() {
@@ -109,7 +109,7 @@ function AddEmployee() {
                     </Select>
                 </FormControl>
                 <TextField label="Phone" variant="outlined" fullWidth size="small" margin="normal" value={phone} onChange={(e) => changePhone(e.target.value)} error={formErrors.phone} helperText={formErrors.phone ? 'Required Field' : ''} />
-                <Button href="/" variant="outlined" sx={{ mx: 2 }}>Cancel</Button>
+                <Button component={Link} to="/" variant="outlined" sx={{ mx: 2 }}>Cancel</Button>
                 <Button variant="contained" onClick={saveEmployee}>Save</Button>
             </Container>
         </div>
